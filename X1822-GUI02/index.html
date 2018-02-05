@@ -2,25 +2,27 @@
 <html>
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-    <script src="Scripts/index.js"></script>
+    <script src="Scripts/index.js" defer="defer"></script>
+    <link href="Style/index.css" rel="stylesheet" />
 </head>
 <body>
-    <div>
-        <h1>My notes</h1>
-        <select id="dropdown" data-bind="foreach: notes" onchange="showNote()">
-            <option data-bind="value: text, text: title"></option>
-        </select>
-    </div>
-    <hr/>
-    <div id="edit">
-        <form id="noteForm" method="post">
-            <input style="width: 200px; background-color:lightgoldenrodyellow"id="noteTitle" data-bind="value: note.title" type="text" />
-            <br />
-            <!--<input id="noteBody" data-bind="value: body, text: body" type="text" />-->
-            <textarea style="width: 198px; height: 150px; background-color: lightgoldenrodyellow" form="noteForm" id="noteBody" data-bind="value: note.text"></textarea>
-            <br />
-            <button type="submit">Done</button>
-        </form>
-    </div>
+    <center>
+        <div>
+            <header><h1>MY NOTES</h1></header>
+            <select id="dropdown" data-bind="foreach: notes" onchange="showNote()">
+                <option data-bind="value: text, text: title"></option>
+            </select>
+        </div>
+        <hr />
+        <div id="edit">
+            <form id="noteForm" method="post">
+                <input style="width: 200px; background-color:lightgoldenrodyellow" id="noteTitle" data-bind="value: note.title" type="text" />
+                <br />
+                <textarea style="width: 198px; height: 150px; background-color: lightgoldenrodyellow" form="noteForm" id="noteBody" data-bind="value: note.text"></textarea>
+                <br />
+                <button class="button, button5" type="submit">Done</button>
+            </form>
+        </div>
+    </center>
 </body>
 </html>
