@@ -8,6 +8,7 @@
     <div>
         <h1>My notes</h1>
         <select id="dropdown" data-bind="foreach: notes">
+            <option data-bind="value: _id, text: title"></option>
         </select>
     </div>
     <hr/>
