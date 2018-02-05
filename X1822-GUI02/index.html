@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
     <script src="Scripts/index.js"></script>
-    <script src="Scripts/knockout-3.4.2.js"></script>
 </head>
 <body>
     <div>
         <h1>My notes</h1>
-        <select id="dropdown"></select>
+        <select id="dropdown" data-bind="foreach: notes()">
+            <option data-bind="value: _id, text: title"></option>
+        </select>
+        
     </div>
     <div id="edit">
 
